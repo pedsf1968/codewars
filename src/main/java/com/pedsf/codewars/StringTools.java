@@ -1,5 +1,6 @@
 package com.pedsf.codewars;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,4 +21,11 @@ public class StringTools {
 
    return result.toString();
    }
+
+   public static String createPhoneNumber(int[] numbers) {
+      String str = Arrays.toString(numbers).replaceAll("\\[|\\]|,| ","");
+
+      return "(" + str.substring(0,3) + ") " + str.substring(3,6) + "-"+  str.substring(6,10);
+   }
+
 }
