@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IntToolsTest {
@@ -46,4 +47,15 @@ class IntToolsTest {
       assertEquals(41, IntTools.sumListOfStringAndInteger(Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0")));
       assertEquals(61, IntTools.sumListOfStringAndInteger(Arrays.asList(8, 0, 0, 8, 5, 7, 2, 3, 7, 8, 6, 7)));
    }
+
+    @Test
+    public void testExample() {
+        int[] exampleTest1 = {2,6,8,-10,3};
+        int[] exampleTest2 = {206847684,1056521,7,17,1901,21104421,7,1,35521,1,7781};
+        int[] exampleTest3 = {Integer.MAX_VALUE, 0, 1};
+
+        assertThat(3).isEqualTo(IntTools.findOutlier(exampleTest1));
+        assertThat(206847684).isEqualTo( IntTools.findOutlier(exampleTest2));
+        assertThat(0).isEqualTo(IntTools.findOutlier(exampleTest3));
+    }
 }
