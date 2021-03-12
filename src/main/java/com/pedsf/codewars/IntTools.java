@@ -1,7 +1,7 @@
 package com.pedsf.codewars;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.List;
 
 public class IntTools {
 
@@ -34,4 +34,15 @@ public class IntTools {
       return Arrays.stream(arr).filter(n -> n>0).sum();
    }
 
+   /**
+    * Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+    *
+    * @param mixed list og integer or string
+    * @return the sum of list elements as a number.
+    */
+   public static int sumListOfStringAndInteger(List<?> mixed) {
+
+
+      return -1;
+   }
 }

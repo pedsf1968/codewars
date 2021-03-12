@@ -2,6 +2,8 @@ package com.pedsf.codewars;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class IntToolsTest {
@@ -32,5 +34,16 @@ class IntToolsTest {
       assertEquals(0, IntTools.sumPositiveNumbers(new int[]{}));
       assertEquals(0, IntTools.sumPositiveNumbers(new int[]{-1,-2,-3,-4,-5}));
       assertEquals(9, IntTools.sumPositiveNumbers(new int[]{-1,2,3,4,-5}));
+   }
+
+   @Test
+   public void sumListOfStringAndInteger() {
+      assertEquals(10, IntTools.sumListOfStringAndInteger(Arrays.asList(5,"5")));
+      assertEquals(22, IntTools.sumListOfStringAndInteger(Arrays.asList(9, 3, "7", "3")));
+      assertEquals(42, IntTools.sumListOfStringAndInteger(Arrays.asList("5", "0", 9, 3, 2, 1, "9", 6, 7)));
+      assertEquals(41, IntTools.sumListOfStringAndInteger(Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0")));
+      assertEquals(45, IntTools.sumListOfStringAndInteger(Arrays.asList("1", "5", "8", 8, 9, 9, 2, "3")));
+      assertEquals(41, IntTools.sumListOfStringAndInteger(Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0")));
+      assertEquals(61, IntTools.sumListOfStringAndInteger(Arrays.asList(8, 0, 0, 8, 5, 7, 2, 3, 7, 8, 6, 7)));
    }
 }
