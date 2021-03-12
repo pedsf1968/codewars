@@ -1,7 +1,9 @@
 package com.pedsf.codewars;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IntTools {
 
@@ -68,8 +70,6 @@ public class IntTools {
     * @return the sum of list elements as a number.
     */
    public static int sumListOfStringAndInteger(List<?> mixed) {
-
-
-      return -1;
+      return mixed.stream().mapToInt(o -> Integer.parseInt(o.toString())).sum();
    }
 }
