@@ -58,4 +58,25 @@ class IntToolsTest {
         assertThat(206847684).isEqualTo( IntTools.findOutlier(exampleTest2));
         assertThat(0).isEqualTo(IntTools.findOutlier(exampleTest3));
     }
+
+   @Test
+   public void grow() {
+      assertEquals(6, IntTools.grow(new int[]{1,2,3}));
+      assertEquals(16, IntTools.grow(new int[]{4,1,1,1,4}));
+      assertEquals(64, IntTools.grow(new int[]{2,2,2,2,2,2}));
+   }
+
+   @Test
+   public void doubleIntArray(){
+      assertArrayEquals(new int[] {2, 4, 6}, IntTools.doubleIntArray(new int[] {1, 2, 3}));
+      assertArrayEquals(new int[] {8, 2, 2, 2, 8}, IntTools.doubleIntArray(new int[] {4, 1, 1, 1, 4}));
+      assertArrayEquals(new int[] {2, 2, 2, 2, 2, 2}, IntTools.doubleIntArray(new int[] {1, 1, 1, 1, 1, 1}));
+   }
+
+   @Test
+   public void getAverage() {
+      assertEquals(2,IntTools.getAverage(new int[] {2,2,2,2}));
+      assertEquals(3,IntTools.getAverage(new int[] {1,2,3,4,5}));
+      assertEquals(1,IntTools.getAverage(new int[] {1,1,1,1,1,1,1,2}));
+   }
 }

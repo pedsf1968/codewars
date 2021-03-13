@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class IntTools {
 
@@ -72,4 +73,33 @@ public class IntTools {
    public static int sumListOfStringAndInteger(List<?> mixed) {
       return mixed.stream().mapToInt(o -> Integer.parseInt(o.toString())).sum();
    }
+
+   /**
+    * Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+    *
+    * [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+    * @param x
+    * @return
+    */
+   public static int grow(int[] x){
+      return Arrays.stream(x).reduce(1, (a,b)->a*b);
+   }
+
+   /**
+    * Given an array of integers, return a new array with each value doubled.
+    *
+    * For example:
+    *
+    * [1, 2, 3] --> [2, 4, 6]
+    * @param arr
+    * @return
+    */
+   public static int[] doubleIntArray(int[] arr) {
+         return Arrays.stream(arr).map(i -> i*2).toArray();
+   }
+
+   public static int getAverage(int[] marks){
+      return IntStream.of(marks).sum()/marks.length;
+   }
+
 }

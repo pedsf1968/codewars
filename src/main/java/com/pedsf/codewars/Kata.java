@@ -2,9 +2,10 @@ package com.pedsf.codewars;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 import java.util.stream.IntStream;
 
 
@@ -115,4 +116,55 @@ public class Kata {
 
       return dateFormat.format(cal.getTime());
    }
+
+   /**
+    * Complete the function so that it finds the average of the three scores passed to it and returns the letter value
+    * associated with that grade.
+    *
+    * Numerical Score	Letter Grade
+    * 90 <= score <= 100	'A'
+    * 80 <= score < 90	'B'
+    * 70 <= score < 80	'C'
+    * 60 <= score < 70	'D'
+    * 0 <= score < 60	'F'
+    * Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+    * @param s1
+    * @param s2
+    * @param s3
+    * @return
+    */
+   public static char getGrade(int s1, int s2, int s3) {
+      char[] score = {'A','B','C','D','F'};
+      int[] minValues = {90,80,70,60,0};
+      int i=0;
+
+      while (minValues[i]>(s1+s2+s3)/3){
+         i++;
+      }
+
+      return score[i];
+   }
+
+   /**
+    * Issue Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+    * The pipes connecting your level's stages together need to be fixed before you recieve any more complaints.
+    * Each pipe should be connecting, since the levels ascend, you can assume every number in the sequence after
+    * the first index will be greater than the previous and that there will be no duplicates.
+    *
+    * Task Given the a list of numbers, return the list so that the values increment by 1 for each index up to the maximum value.
+    *
+    * #Example:
+    * Input: 1,3,5,6,7,8
+    * Output: 1,2,3,4,5,6,7,8
+    * @param numbers
+    * @return
+    */
+   public static int[] pipeFix(int[] numbers) {
+
+      int min = Arrays.stream(numbers).filter(num -> num !=0).min().getAsInt();
+      int max =Arrays.stream(numbers).max().getAsInt() + 1;
+      return IntStream.range(min, max).toArray();
+   }
+
+
 }

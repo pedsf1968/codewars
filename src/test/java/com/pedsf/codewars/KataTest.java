@@ -45,4 +45,45 @@ class KataTest {
       assertEquals(Kata.dateNbDays(7792, 8987, 4), "2019-07-09");
    }
 
+   @Test
+   public void getGrade1() {
+      assertEquals('A', Kata.getGrade(95,90,93));
+      assertEquals('A', Kata.getGrade(100,85,96));
+      assertEquals('A', Kata.getGrade(92,93,94));
+      assertEquals('A', Kata.getGrade(100,100,100));
+   }
+   @Test
+   public void getGrade2() {
+      assertEquals('B', Kata.getGrade(70,70,100));
+      assertEquals('B', Kata.getGrade(82,85,87));
+      assertEquals('B', Kata.getGrade(84,79,85));
+   }
+   @Test
+   public void getGrade3() {
+      assertEquals('C', Kata.getGrade(70,70,70));
+      assertEquals('C', Kata.getGrade(75,70,79));
+      assertEquals('C', Kata.getGrade(60,82,76));
+   }
+   @Test
+   public void getGrade4() {
+      assertEquals('D', Kata.getGrade(65,70,59));
+      assertEquals('D', Kata.getGrade(66,62,68));
+      assertEquals('D', Kata.getGrade(58,62,70));
+   }
+   @Test
+   public void getGrade5() {
+      assertEquals('F', Kata.getGrade(44,55,52));
+      assertEquals('F', Kata.getGrade(48,55,52));
+      assertEquals('F', Kata.getGrade(58,59,60));
+      assertEquals('F', Kata.getGrade(0,0,0));
+   }
+
+   @Test
+   public void pipeFix() {
+      assertArrayEquals(new int[] {1,2,3,4,5,6,7,8,9}, Kata.pipeFix(new int[] {1,2,3,5,6,8,9}));
+      assertArrayEquals(new int[] {1,2,3,4,5,6,7,8,9,10,11,12}, Kata.pipeFix(new int[] {1,2,3,12}));
+      assertArrayEquals(new int[] {6,7,8,9}, Kata.pipeFix(new int[] {6,9}));
+      assertArrayEquals(new int[] {-1,0,1,2,3,4}, Kata.pipeFix(new int[] {-1,4}));
+      assertArrayEquals(new int[] {1,2,3}, Kata.pipeFix(new int[] {1,2,3}));
+   }
 }

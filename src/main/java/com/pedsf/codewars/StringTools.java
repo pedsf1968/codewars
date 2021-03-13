@@ -1,5 +1,6 @@
 package com.pedsf.codewars;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,5 +20,17 @@ public class StringTools {
       }
 
    return result.toString();
+   }
+
+   /**
+    * Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'.
+    * Return the resulting string.
+    *
+    * @param numberString
+    * @return
+    */
+   public static String fakeBin(String numberString) {
+
+      return numberString.replaceAll("[01234]","0").replaceAll("[56789]","1");
    }
 }
