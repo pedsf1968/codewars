@@ -79,4 +79,14 @@ class IntToolsTest {
       assertEquals(3,IntTools.getAverage(new int[] {1,2,3,4,5}));
       assertEquals(1,IntTools.getAverage(new int[] {1,1,1,1,1,1,1,2}));
    }
+
+   @Test public void findNonConsecutive() {
+      assertEquals(Integer.valueOf(6), IntTools.findNonConsecutive(new int[]{1, 2, 3, 4, 6, 7, 8}));
+      assertEquals(null, IntTools.findNonConsecutive(new int[]{1, 2, 3, 4, 5, 6, 7, 8}));
+      assertEquals(Integer.valueOf(6), IntTools.findNonConsecutive(new int[]{4, 6, 7, 8, 9, 11}));
+      assertEquals(Integer.valueOf(11), IntTools.findNonConsecutive(new int[]{4, 5, 6, 7, 8, 9, 11}));
+      assertEquals(null, IntTools.findNonConsecutive(new int[]{31, 32}));
+      assertEquals(Integer.valueOf(0), IntTools.findNonConsecutive(new int[]{-3, -2, 0, 1}));
+      assertEquals(Integer.valueOf(-1), IntTools.findNonConsecutive(new int[]{-5, -4, -3, -1}));
+   }
 }
