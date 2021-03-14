@@ -47,4 +47,47 @@ public class StringTools {
       Collections.reverse(stringList);
       return stringList.toArray(new String[0]);
    }
+
+   /**
+    * Write a function to convert a name into initials. This kata strictly takes two words with one space in between
+    * them.
+    * The output should be two capital letters with a dot separating them.
+    * It should look like this:
+    *
+    * Sam Harris => S.H
+    * Patrick Feeney => P.F
+    * @param name
+    * @return
+    */
+   public static String abbrevName(String name) {
+      String [] initials = name.split(" ");
+      return (initials[0].charAt(0) + "." + initials[1].charAt(0)).toUpperCase();
+   }
+
+   /**
+    * You probably know that some characters written on a piece of paper, after turning this sheet 180 degrees, can be
+    * read, although sometimes in a different way. So, uppercase letters "H", "I", "N", "O", "S", "X", "Z" after
+    * rotation are not changed, the letter "M" becomes a "W", and Vice versa, the letter "W" becomes a "M".
+    *
+    * We will call a word "shifter" if it consists only of letters "H", "I", "N", "O", "S", "X", "Z", "M" and "W". After
+    * turning the sheet, this word can also be read, although in a different way. So, the word "WOW "turns into the word
+    * "MOM". On the other hand, the word "HOME" is not a shifter.
+    *
+    * Find the number of unique shifter words in the input string (without duplicates). All shifters to be counted, even
+    * if they are paired (like "MOM" and "WOW"). String contains only uppercase letters.
+    * @param st
+    * @return
+    */
+   public static int countShifter(String st){
+      int result = 0;
+      String[] words = st.split(" ");
+
+      Arrays.stream(words).distinct().forEach(word -> word.toUpperCase().replaceAll("[HINOSXZMW]",""));
+
+      for(String word : words) {
+         word = word.toUpperCase().replaceAll("[HINOSXZMW]","");
+         if(word.equals("")) ++result;
+      }
+      return result;
+   }
 }

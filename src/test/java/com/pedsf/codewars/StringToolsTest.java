@@ -52,4 +52,38 @@ class StringToolsTest {
       assertArrayEquals(new String[]{ "sky", "rainbow", "ground" },
             StringTools.fixTheMeerkat(new String[]{ "ground", "rainbow", "sky" }));
    }
+
+   @Test
+   public void abbrevName() {
+      assertEquals("S.H", StringTools.abbrevName("Sam Harris"));
+      assertEquals("P.F", StringTools.abbrevName("Patrick Feenan"));
+      assertEquals("E.C", StringTools.abbrevName("Evan Cole"));
+      assertEquals("P.F", StringTools.abbrevName("P Favuzzi"));
+      assertEquals("D.M", StringTools.abbrevName("David Mendieta"));
+   }
+
+   @Test
+   public void countShifteron(){
+      assertEquals(1, StringTools.countShifter("ON"));
+   }
+   @Test
+   public void countShifterosIsUpdated(){
+      assertEquals(2, StringTools.countShifter("OS IS UPDATED"));
+   }
+   @Test
+   public void countShifterwhoIsWho(){
+      assertEquals(2, StringTools.countShifter("WHO IS WHO"));
+   }
+   @Test
+   public void countShifterjs(){
+      assertEquals(0, StringTools.countShifter("JS"));
+   }
+   @Test
+   public void countShifteriIiiIIii(){
+      assertEquals(2, StringTools.countShifter("I III I III"));
+   }
+   @Test
+   public void countShifterempty(){
+      assertEquals(0, StringTools.countShifter(""));
+   }
 }

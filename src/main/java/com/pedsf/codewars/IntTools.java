@@ -1,9 +1,7 @@
 package com.pedsf.codewars;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class IntTools {
@@ -120,6 +118,20 @@ public class IntTools {
          if(array[i]+1<array[i+1]) return array[i+1];
       }
       return null;
+   }
+
+   /**
+    * Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives
+    * become positives.
+    *
+    * invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+    * invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+    * invert([]) == []
+    * @param array
+    * @return
+    */
+   public static int[] invertSigne(int[] array) {
+      return Arrays.stream(array).map(operand -> -operand).toArray();
    }
 
 }

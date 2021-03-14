@@ -89,4 +89,24 @@ class IntToolsTest {
       assertEquals(Integer.valueOf(0), IntTools.findNonConsecutive(new int[]{-3, -2, 0, 1}));
       assertEquals(Integer.valueOf(-1), IntTools.findNonConsecutive(new int[]{-5, -4, -3, -1}));
    }
+
+   @Test
+   public void testSomething() {
+
+      int[] input = new int[] {-1,-2,-3,-4,-5};
+      int[] expected = new int[] {1,2,3,4,5};
+      assertEquals(Arrays.toString(expected), Arrays.toString(IntTools.invertSigne(input)));
+
+      input = new int[] {-1,2,-3,4,-5};
+      expected = new int[] {1,-2,3,-4,5};
+      assertEquals(Arrays.toString(expected), Arrays.toString(IntTools.invertSigne(input)));
+
+      input = new int[] {};
+      expected = new int[] {};
+      assertEquals(Arrays.toString(expected), Arrays.toString(IntTools.invertSigne(input)));
+
+      input = new int[] {0};
+      expected = new int[] {0};
+      assertEquals(Arrays.toString(expected), Arrays.toString(IntTools.invertSigne(input)));
+   }
 }
