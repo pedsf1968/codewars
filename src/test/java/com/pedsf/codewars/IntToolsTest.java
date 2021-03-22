@@ -109,4 +109,13 @@ class IntToolsTest {
       expected = new int[] {0};
       assertEquals(Arrays.toString(expected), Arrays.toString(IntTools.invertSigne(input)));
    }
+
+   @Test
+   public void divisibleBy() {
+      assertArrayEquals(new int[] {2,4,6}, IntTools.divisibleBy(new int[] {1,2,3,4,5,6},2));
+      assertArrayEquals(new int[] {3,6}, IntTools.divisibleBy(new int[] {1,2,3,4,5,6},3));
+      assertArrayEquals(new int[] {0,4}, IntTools.divisibleBy(new int[] {0,1,2,3,4,5,6},4));
+   }
+
+
 }

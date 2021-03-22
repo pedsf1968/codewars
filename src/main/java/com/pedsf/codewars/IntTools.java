@@ -134,4 +134,20 @@ public class IntTools {
       return Arrays.stream(array).map(operand -> -operand).toArray();
    }
 
+   public static int[] arrayInitialize(int a, int b) {
+
+       return java.util.stream.IntStream.rangeClosed(a, b).toArray();
+    }
+
+    /**
+     * Complete the function which takes two arguments and returns all numbers which are divisible by the given divisor.
+     * First argument is an array of numbers and the second is the divisor.
+     * @param numbers to test
+     * @param divider
+     * @return the numbers that can be divided
+     */
+    public static int[] divisibleBy(int[] numbers, int divider) {
+        return Arrays.stream(numbers).filter(num -> (num % divider)==0).toArray();
+    }
+
 }
